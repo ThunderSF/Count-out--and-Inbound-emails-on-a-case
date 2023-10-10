@@ -10,7 +10,7 @@ public without Sharing class CountInboundAndOutboundEmails {
             }
         }
         if(emIds.size()>0){
-            List<Case> caseList = [Select id,count_of_outbound_emails__c,Status,Last_Time_Waiting_Status__c 
+            List<Case> caseList = [Select id,count_of_outbound_emails__c,Status 
                                    from Case Where Id IN : emIds.keySet()];
             if(caseList.size()>0){
                 Set<Id> updateCases = new Set<Id>();
